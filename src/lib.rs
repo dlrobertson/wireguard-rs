@@ -5,7 +5,6 @@
 
 #![allow(unknown_lints)]
 #![warn(clippy)]
-#![feature(ip_constructors)]
 #![feature(try_trait)]
 #![feature(try_from)]
 #![feature(test)]

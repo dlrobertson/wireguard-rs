@@ -117,8 +117,8 @@ impl UdpSocket {
         setsockopt(socket4.as_raw_fd(), sockopt::Ipv4PacketInfo, &true);
         setsockopt(socket6.as_raw_fd(), sockopt::Ipv6RecvPacketInfo, &true);
 
-        socket4.bind(&SocketAddr::from((Ipv4Addr::unspecified(), port)).into())?;
-        socket6.bind(&SocketAddr::from((Ipv6Addr::unspecified(), port)).into())?;
+        socket4.bind(&SocketAddr::from((Ipv4Addr::UNSPECIFIED, port)).into())?;
+        socket6.bind(&SocketAddr::from((Ipv6Addr::UNSPECIFIED, port)).into())?;
 
         let socket4 = mio::net::UdpSocket::from_socket(socket4.into_udp_socket())?;
         let socket6 = mio::net::UdpSocket::from_socket(socket6.into_udp_socket())?;

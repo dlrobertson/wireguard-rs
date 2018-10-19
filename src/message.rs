@@ -138,6 +138,12 @@ impl CookieReply {
     }
 }
 
+impl Into<Vec<u8>> for CookieReply {
+    fn into(self) -> Vec<u8> {
+        self.0
+    }
+}
+
 impl TryFrom<Vec<u8>> for CookieReply {
     type Error = Error;
 

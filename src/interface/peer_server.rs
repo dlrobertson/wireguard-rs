@@ -368,7 +368,7 @@ impl PeerServer {
             IpAddr::V6(ip) => self.cookie.generate_reply(index, mac1, &ip.octets())?,
         };
 
-        self.send_to_peer((addr, reply.to_vec())) // TODO: impl into() to avoid copies/allocs
+        self.send_to_peer((addr, reply.into()))
     }
 
     fn send_handshake_init(&mut self, peer_ref: &SharedPeer) -> Result<u32, Error> {
